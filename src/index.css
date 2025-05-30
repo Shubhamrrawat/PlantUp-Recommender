@@ -1,0 +1,72 @@
+@import '@fontsource/inter';
+@import '@fontsource/roboto-condensed';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-green: #45624E;
+  --background-color: #E4E6D9;
+  --light-green: #7A9A7E;
+  --dark-green: #2D4134;
+  --accent-brown: #A67C52;
+  --light-brown: #D3BEA1;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background-color);
+  color: #333;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary-green);
+}
+
+.brand-text {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 50px;
+}
+
+@layer components {
+  .form-select {
+    @apply w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 bg-white;
+  }
+  
+  .form-input {
+    @apply w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500;
+  }
+  
+  .btn-primary {
+    @apply bg-[#45624E] hover:bg-[#2D4134] text-white font-medium py-2 px-4 rounded-md transition-all duration-300 shadow-md hover:shadow-lg;
+  }
+}
+
+/* Custom animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+/* Improve scrollbar appearance */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--light-green);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-green);
+}
